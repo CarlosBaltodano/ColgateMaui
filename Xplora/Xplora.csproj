@@ -52,4 +52,12 @@
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <Folder Include="Model\" />
+	  <Folder Include="Helpers\" />
+	  <Folder Include="Interface\" />
+	  <Folder Include="ViewModel\" />
+	  <Folder Include="View\" />
+	</ItemGroup>
+
 </Project>
