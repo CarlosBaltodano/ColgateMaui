@@ -1,8 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFrameworks>net7.0-android;net7.0-ios;net7.0-maccatalyst</TargetFrameworks>
-		<TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net7.0-windows10.0.19041.0</TargetFrameworks>
+		<TargetFrameworks>net7.0-android33.0</TargetFrameworks>
 		<!-- Uncomment to also build the tizen app. You will need to install tizen by following this: https://github.com/Samsung/Tizen.NET -->
 		<!-- <TargetFrameworks>$(TargetFrameworks);net7.0-tizen</TargetFrameworks> -->
 		<OutputType>Exe</OutputType>
@@ -28,6 +27,21 @@
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</SupportedOSPlatformVersion>
 		<TargetPlatformMinVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</TargetPlatformMinVersion>
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
+		<PlatformTarget>AnyCPU</PlatformTarget>
+		<Nullable>disable</Nullable>
+	</PropertyGroup>
+
+
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net7.0-android33.0|AnyCPU'">
+	  <DebugType>full</DebugType>
+	  <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+	  <AndroidEnableMultiDex>True</AndroidEnableMultiDex>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net7.0-android33.0|AnyCPU'">
+	  <DebugType>full</DebugType>
+	  <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+	  <AndroidEnableMultiDex>True</AndroidEnableMultiDex>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -49,7 +63,137 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="Resources\Images\add.png" />
+	  <None Remove="Resources\Images\add_product.png" />
+	  <None Remove="Resources\Images\add_product_ic.png" />
+	  <None Remove="Resources\Images\barra_0.png" />
+	  <None Remove="Resources\Images\barra_10.png" />
+	  <None Remove="Resources\Images\barra_100.png" />
+	  <None Remove="Resources\Images\barra_20.png" />
+	  <None Remove="Resources\Images\barra_30.png" />
+	  <None Remove="Resources\Images\barra_40.png" />
+	  <None Remove="Resources\Images\barra_50.png" />
+	  <None Remove="Resources\Images\barra_60.png" />
+	  <None Remove="Resources\Images\barra_70.png" />
+	  <None Remove="Resources\Images\barra_80.png" />
+	  <None Remove="Resources\Images\barra_90.png" />
+	  <None Remove="Resources\Images\bg_beacon.png" />
+	  <None Remove="Resources\Images\bg_login_smile.png" />
+	  <None Remove="Resources\Images\box_white.PNG" />
+	  <None Remove="Resources\Images\buscar.svg" />
+	  <None Remove="Resources\Images\calendar_tarea.png" />
+	  <None Remove="Resources\Images\calendar_tareas.svg" />
+	  <None Remove="Resources\Images\cancel.PNG" />
+	  <None Remove="Resources\Images\carpeta.png" />
+	  <None Remove="Resources\Images\check.PNG" />
+	  <None Remove="Resources\Images\completado.svg" />
+	  <None Remove="Resources\Images\dollar.png" />
+	  <None Remove="Resources\Images\empty.png" />
+	  <None Remove="Resources\Images\estrella_no_seleccionada.png" />
+	  <None Remove="Resources\Images\estrella_seleccionada.png" />
+	  <None Remove="Resources\Images\exit_tareas.png" />
+	  <None Remove="Resources\Images\grupo_encuesta.png" />
+	  <None Remove="Resources\Images\icn_agenda.png" />
+	  <None Remove="Resources\Images\icn_complete_status.png" />
+	  <None Remove="Resources\Images\icn_constancia.png" />
+	  <None Remove="Resources\Images\icn_default.png" />
+	  <None Remove="Resources\Images\icn_encuesta.png" />
+	  <None Remove="Resources\Images\icn_evaluacion.png" />
+	  <None Remove="Resources\Images\icn_filter.png" />
+	  <None Remove="Resources\Images\icn_manual.png" />
+	  <None Remove="Resources\Images\icn_notificacion.png" />
+	  <None Remove="Resources\Images\icn_pending_status.png" />
+	  <None Remove="Resources\Images\icn_tareas.png" />
+	  <None Remove="Resources\Images\icn_task.png" />
+	  <None Remove="Resources\Images\icono_chronometer.png" />
+	  <None Remove="Resources\Images\icon_dots.png" />
+	  <None Remove="Resources\Images\ic_action_close.png" />
+	  <None Remove="Resources\Images\ic_action_flash_on.png" />
+	  <None Remove="Resources\Images\ic_action_logo_xplora.png" />
+	  <None Remove="Resources\Images\ic_beacon.png" />
+	  <None Remove="Resources\Images\ic_calendar.png" />
+	  <None Remove="Resources\Images\ic_calendar_2.png" />
+	  <None Remove="Resources\Images\ic_cambio_camera.png" />
+	  <None Remove="Resources\Images\ic_camera.png" />
+	  <None Remove="Resources\Images\ic_check_out.svg" />
+	  <None Remove="Resources\Images\ic_clip.png" />
+	  <None Remove="Resources\Images\ic_close.png" />
+	  <None Remove="Resources\Images\ic_cloud_download.png" />
+	  <None Remove="Resources\Images\ic_cloud_upload.png" />
+	  <None Remove="Resources\Images\ic_edit.png" />
+	  <None Remove="Resources\Images\ic_empty.svg" />
+	  <None Remove="Resources\Images\ic_finish_camera.png" />
+	  <None Remove="Resources\Images\ic_fondo_satisfaccion.png" />
+	  <None Remove="Resources\Images\ic_hourglass.png" />
+	  <None Remove="Resources\Images\ic_launcher_ip.png" />
+	  <None Remove="Resources\Images\ic_logout.png" />
+	  <None Remove="Resources\Images\ic_logo_new.png" />
+	  <None Remove="Resources\Images\ic_next.png" />
+	  <None Remove="Resources\Images\ic_pdv.png" />
+	  <None Remove="Resources\Images\ic_red.png" />
+	  <None Remove="Resources\Images\ic_red_menu.png" />
+	  <None Remove="Resources\Images\ic_right_100.png" />
+	  <None Remove="Resources\Images\ic_route.png" />
+	  <None Remove="Resources\Images\ic_route_red.png" />
+	  <None Remove="Resources\Images\ic_save.png" />
+	  <None Remove="Resources\Images\ic_scan.png" />
+	  <None Remove="Resources\Images\ic_supervisor.png" />
+	  <None Remove="Resources\Images\ic_timeline.png" />
+	  <None Remove="Resources\Images\ic_timeline_white.png" />
+	  <None Remove="Resources\Images\ic_zoom.png" />
+	  <None Remove="Resources\Images\img_camera_preview.png" />
+	  <None Remove="Resources\Images\img_camera__report.jpg" />
+	  <None Remove="Resources\Images\img_clock_inout.png" />
+	  <None Remove="Resources\Images\img_encuesta.png" />
+	  <None Remove="Resources\Images\img_evaluacion.png" />
+	  <None Remove="Resources\Images\img_event_default.png" />
+	  <None Remove="Resources\Images\img_gallery__report.png" />
+	  <None Remove="Resources\Images\img_maps_pdvs.png" />
+	  <None Remove="Resources\Images\img_notificacion.png" />
+	  <None Remove="Resources\Images\img_pdf.png" />
+	  <None Remove="Resources\Images\img_reporte.png" />
+	  <None Remove="Resources\Images\img_user.png" />
+	  <None Remove="Resources\Images\logo_smile.png" />
+	  <None Remove="Resources\Images\logo_smile_red.png" />
+	  <None Remove="Resources\Images\logo_tareas.png" />
+	  <None Remove="Resources\Images\LuckyLogoVertical.png" />
+	  <None Remove="Resources\Images\main_bg.png" />
+	  <None Remove="Resources\Images\new_store.png" />
+	  <None Remove="Resources\Images\notify_img_head.png" />
+	  <None Remove="Resources\Images\not_found_pdv.svg" />
+	  <None Remove="Resources\Images\Nuevas_12pm_3pm.svg" />
+	  <None Remove="Resources\Images\Nuevas_3pm_fin.svg" />
+	  <None Remove="Resources\Images\Nuevas_7am_12pm.svg" />
+	  <None Remove="Resources\Images\plane.PNG" />
+	  <None Remove="Resources\Images\Proceso_12pm_3pm.svg" />
+	  <None Remove="Resources\Images\Proceso_3pm_fin.svg" />
+	  <None Remove="Resources\Images\Proceso_7am_12pm..svg" />
+	  <None Remove="Resources\Images\Proceso_7am_12pm.svg" />
+	  <None Remove="Resources\Images\reporte_tarea.png" />
+	  <None Remove="Resources\Images\reporte_tareas.svg" />
+	  <None Remove="Resources\Images\save.png" />
+	  <None Remove="Resources\Images\signal_icon.png" />
+	  <None Remove="Resources\Images\sin_tareas.svg" />
+	  <None Remove="Resources\Images\smile_toolbar.png" />
+	  <None Remove="Resources\Images\smile_toolbar_2.png" />
+	  <None Remove="Resources\Images\subir_imagen.PNG" />
+	  <None Remove="Resources\Images\support.png" />
+	  <None Remove="Resources\Images\tarea_completada.png" />
+	  <None Remove="Resources\Images\tarea_en_proceso.png" />
+	  <None Remove="Resources\Images\Tarea_no_accionable.svg" />
+	  <None Remove="Resources\Images\tarea_pendiente.png" />
+	  <None Remove="Resources\Images\tomar_foto.PNG" />
+	  <None Remove="Resources\Images\vector_barcode.png" />
+	  <None Remove="Resources\Splash\splash.png" />
+	</ItemGroup>
+
+	<ItemGroup>
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
+		<PackageReference Include="sqlite-net-pcl" Version="1.8.116" />
+		<PackageReference Include="Syncfusion.Maui.Core" Version="22.2.12" />
+		<PackageReference Include="Syncfusion.Maui.DataGrid" Version="22.2.12" />
+		<PackageReference Include="Syncfusion.Maui.Inputs" Version="22.2.12" />
+		<PackageReference Include="Syncfusion.Maui.ListView" Version="22.2.12" />
 	</ItemGroup>
 
 	<ItemGroup>

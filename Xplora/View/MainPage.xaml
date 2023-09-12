@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Shell.NavBarIsVisible="False"
+             x:Class="Xplora.MainPage">
+
+    <Grid BackgroundColor="Red">
+        <Image Source="bg_login_smile" Aspect="AspectFill"/>
+        <Grid Padding="20">
+            <Image Source="logo_smile" HeightRequest="200" WidthRequest="200" VerticalOptions="StartAndExpand"/>
+            <VerticalStackLayout VerticalOptions="CenterAndExpand" Spacing="20">
+                <Entry Placeholder="Usuario"/>
+                <Entry Placeholder="Usuario"/>
+            </VerticalStackLayout>
+            <VerticalStackLayout VerticalOptions="EndAndExpand" Spacing="20">
+                <Button Text="Ingresar"/>
+                <Button Text="Generar Contraseña"/>
+            </VerticalStackLayout>
+        </Grid>
+    </Grid>
+
+</ContentPage>
